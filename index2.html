@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curso Javascript</title>
+</head>
+<body>
+    <script>
+        // Tipos de dados
+        var nome = "Zezinho"; // String
+        var idade = 23; // Inteiro
+        var peso = 80.5; // Float
+        var humano = true; // Booleano
+
+        var alunos = ['Zé', 'Paulo', 'Tiburcio']; // Listas
+
+        var aluno = { // Objetos
+            nome: 'Zezinho', // posso colocar um dos nomes das listas, ex. alunos[2] mostra Tiburcio
+            idade: 23,
+            peso: 80.5,
+            humano: true
+        };
+
+        //console.log(alunos[1]); // Exibindo o item de uma lista
+        //console.log(aluno.nome); // Exibindo o item de um objeto
+
+        var x = 10, y = 5; // Operações matemáticas tem que ser com números, se colocar uma das variáveis como string ele vai concatenar os valores
+
+        // Operadores: + - * / %
+
+        x += 3; // Para incrementar uma variável, posso usar + - * /
+
+        //console.log(x);
+
+        function soma(numero1, numero2){ // Função nome_funcao(parâmetros que vai receber)
+            var resultado = numero1 + numero2; // É usada só nessa função, visível apenas dentro da função
+            return resultado; // Retorna o resultado desses números
+        }
+
+        var resultado = soma(1,2); // Criei com o mesmo nome pois apenas com a função dá erro de variável não definida
+        //console.log(resultado); // Exibirá o "resultado" acima
+
+        function retornaSexo(sexo){ // Retorna qual é o sexo do indivíduo (M ou F)
+            if (sexo === 'M'){ // == verifica se os valores são iguais; === verifica se o valor e o tipo da variável são iguais
+                return 'Masculino';
+            } else if (sexo === 'F'){
+                return 'Feminino';
+            } else {
+                return 'Outro';
+            }
+        }
+
+        var result = retornaSexo('vcbgcv');
+        //console.log(result);
+
+        function retornaSexo2(sexo){ // Retorna qual é o sexo do indivíduo (M ou F)
+            switch (sexo){ // Verifica o valor da mesma variável por múltiplas vezes, evitando muitos if-else
+                case 'M':
+                    return 'Masculino';
+                case 'F':
+                    return 'Feminino';
+                default:
+                    return 'Outro';
+            }
+        }
+
+        var result2 = retornaSexo2('sdfgfd');
+        //console.log(result2);
+
+        // Operadores lógicos: and (%%), or (||) e not (!= ou !==)
+        var sexo = 'M', idade = 10;
+
+        /*if (sexo === 'M' || idade >= 18){
+            console.log('OK');
+        }*/
+
+        /*if (sexo !== 'M'){
+            console.log('OK');
+        }*/
+
+        //var masculino = sexo === 'M'; // Para simplificar mais o código, ele mostra se é true ou false
+        /*if (sexo === 'F'){
+            masculino = true;
+        } else {
+            masculino = false;
+        }*/
+        //console.log(masculino)
+/*
+        var retorno = (sexo === 'M') ? 'Masculino' : 'Feminino'; // Condição ternária: reduz ainda mais o if e else para 02 condições
+        console.log(retorno)
+*/
+        
+        // Estruturas de repetição
+/*
+        for (var i = 0; i <= 100; i++) { // (valor inicial variável; condição; incrementar i) - utilizar quando vc sabe o tamanho do intervalo
+            console.log(i);
+        }
+
+        var j = 0;
+        while (j <= 100){ // (condição) -> bloco de código - utilizar quando não se sabe o tamanho do intervalo
+            console.log(j);
+            j++;
+        }
+*/
+
+        // Intervalo - é uma função que é executa determinadas vezes dentro de um intervalo
+        function exibeAlgo(){
+            console.log('Hello World!');
+        }
+
+        //setInterval(exibeAlgo, 1000); // Ela será exibida a cada 1 seg (função, tempo)
+
+        setTimeout(exibeAlgo, 5000); // Executa a função uma vez depois de um determinado tempo, no caso do ex., 5 seg.
+    </script>
+</body>
+</html>
