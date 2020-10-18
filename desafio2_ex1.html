@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercícios JS 2</title>
+</head>
+<body>
+    
+    <button class='botao' id='btnCriar' onClick="gerarQuadrado()">Gerar novo</button> <!--Botão que ao clicar roda a função gerarQuadrado, criando um quadrado abaixo-->
+
+    <div id="app">
+        <div class="box"></div>
+    </div>
+    
+    <script>
+        /* 1) Crie um botão que ao ser clicado cria um novo elemento em tela com a forma de um quadradovermelho com 100px de altura e largura. Sempre que o botão for clicado um novo quadrado deveaparecer na tela.*/
+
+        var btnCriar = document.querySelector('#btnCriar');
+        // O query retorna o elemento de id btnCriar no button acima
+        
+        function gerarQuadrado() {
+            var boxElement = document.createElement("div"); // Cria elemento no div (variável boxElement)
+            boxElement.style.width = '100px';
+            boxElement.style.height = '100px';
+            boxElement.style.margin = '5px';
+            boxElement.style.backgroundColor = '#f00';
+
+            //adiciona a classe .box na div criada
+            boxElement.classList.add('box');
+
+            document.body.appendChild(boxElement); // Insere o boxElement (filho) no body do HTML (pai)
+        }
+
+            
+        
+    </script>
+</body>
+</html>

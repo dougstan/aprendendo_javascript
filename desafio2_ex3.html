@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercícios JS 2</title>
+</head>
+<body>
+
+    <input type="button" onclick="listarNomes()" value="Clique">
+    <ul id="lista"></ul>
+
+    <script>
+        /* 3) A partir do seguinte vetor:
+        var nomes = ["Diego", "Gabriel", "Lucas"];
+        Preencha uma lista (<ul>) no HTML com os itens da seguinte forma:
+        * Diego
+        * Gabriel
+        * Lucas*/
+
+        var nomes = ["Diego", "Gabriel", "Lucas"];
+        
+        function listarNomes() {
+            
+            var listElement = document.createElement('ul');
+
+            for (var value of nomes){
+                var itemElement = document.createElement('ul');
+                itemElement.appendChild(document.createTextNode(value));
+                listElement.appendChild(itemElement);
+            }
+
+            var containerElement = document.querySelector('#lista');
+            containerElement.appendChild(listElement);
+        }
+   
+    </script>
+    
+</body>
+</html>

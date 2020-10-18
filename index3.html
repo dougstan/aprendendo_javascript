@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curso Javascript</title>
+</head>
+<body>
+
+    <div>
+        <button onclick="mostraAlerta()">Me pressione</button>
+        <!--Ao clicar no botão, mostra o alerta-->
+    </div>
+    <br>
+    <div>
+        <button onmouseover="mostraAlerta()">Me pressione</button>
+        <!--Botão que se passar o mouse mostra o alerta-->
+    </div>
+    <br>
+    <div>
+        <input type="text" name="nome" /> <!--Caixa de texto (type = text)-->
+        <button class="botao">Adicionar</button> <!--Botão-->
+    </div>
+    <br>
+    <div id="app">
+        <input id="nome2" />
+    </div>
+    <br>
+    <div id="app">
+        <div class="box"></div>
+    </div>
+
+    <script>
+        // DOM é a árvore de elementos dentro do HTML (exemplo está no div acima, mas pode ser aplicado em qualquer elemento do HTML)
+        function mostraAlerta(){
+            alert('Botão foi clicado!'); // Mostra uma caixa de alerta na página
+        }
+        var inputElement = document.querySelector('input[name=nome]');
+        var btnElement = document.querySelector('button.botao');
+        btnElement.onclick = function(){ // Ao clicar no botão
+            var text = inputElement.value; // Coleta o que foi digitado na caixa de texto
+            alert(text); // Mostra um alerta com o que foi digitado
+        }
+        console.log(inputElement);
+
+        //--------------------------------------------------------------
+        // Lidando com elementos
+        var linkElement = document.createElement('a'); // criando um elemento de link
+        linkElement.setAttribute('href', 'http://www.uol.com.br'); // inserindo atributos
+        linkElement.setAttribute('title', 'Site do UOL');
+
+        var textElement = document.createTextNode('Acesse o UOL'); // texto do link
+        linkElement.appendChild(textElement); // o appendChild adiciona um nó ao final da lista de filhos de um nó pai especificado. Se o nó já existir no documento, ele é removido de seu nó pai atual antes de ser adicionado ao novo pai.
+
+        var conteinerElement = document.querySelector('#app'); 
+        conteinerElement.appendChild(linkElement);
+        // o Query Selector retorna o primeiro elemento dentro do documento (usando ordenação em profundidade, pré-ordenada e transversal dos nós do documento) que corresponde ao grupo especificado de seletores.
+
+        var inputElement2 = document.querySelector('#nome2');
+        //conteinerElement.removeChild(inputElement2); // posso tirar elementos com o removeChild
+
+        //------------------------------------------------------------
+        // Alterando estilos
+        var boxElement = document.querySelector('.box');
+
+        boxElement.style.width = 100;
+        boxElement.style.height = 100;
+        boxElement.style.backgroundColor = '#f00';
+    </script>
+    
+</body>
+</html>
